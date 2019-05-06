@@ -21,6 +21,8 @@ docker exec mysql-mpss2019 mysql -uroot -ptoor -e "ALTER USER 'root'@'localhost'
 docker exec mysql-mpss2019 mysql -uroot -ptoor -e "CREATE DATABASE IF NOT EXISTS mpss2019;"
 docker exec -i mysql-mpss2019 mysql -uroot -ptoor mpss2019 < page_props.sql
 
+docker exec -i mysql-mpss2019 mysql -uroot -ptoor -e "ALTER TABLE mpss2019.page_props ORDER BY pp_page ASC;"
+
 docker exec mysql-mpss2019 mysql -uroot -ptoor -e "CREATE TABLE mpss2019.living_people (\
     id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, \
     title VARCHAR(255), \
